@@ -49,7 +49,7 @@ func (c *WordMapContainer) TopTenWords(textInput string) []byte {
 
 	pushFunc := func(words []string) {
 		for _, word := range words {
-			if len(word) <= 1 {
+			if word == "a" || len(word) >= 2 {
 				c.PushWordToMap(word)
 			}
 		}
@@ -93,7 +93,12 @@ func (c *WordMapContainer) Sort() {
 }
 
 func (c *WordMapContainer) ToJson() []byte {
-	wordJson, _ := json.MarshalIndent(c.WordOccurrenceStruct[:10], "", " ")
+	var lastTopIndex int
+	lenWordOccurrence := len(c.WordOccurrenceStruct)
+	if lenWordOccurrence > 10 {
+		lastTopIndex = 10
+	}
+	wordJson, _ := json.MarshalIndent(c.WordOccurrenceStruct[:lastTopIndex], "", " ")
 
 	return wordJson
 }

@@ -17,7 +17,7 @@
         "count": 6
     },
     {
-        "word": "of",
+        "word": "lorem",
         "count": 4
     },
     {
@@ -25,7 +25,7 @@
         "count": 4
     },
     {
-        "word": "lorem",
+        "word": "of",
         "count": 4
     },
     {
@@ -37,7 +37,7 @@
         "count": 3
     },
     {
-        "word": "s",
+        "word": "has",
         "count": 2
     },
     {
@@ -45,11 +45,11 @@
         "count": 2
     },
     {
-        "word": "with",
+        "word": "text",
         "count": 2
     },
     {
-        "word": "text",
+        "word": "a",
         "count": 2
     }
 ]
