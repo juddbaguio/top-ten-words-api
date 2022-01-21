@@ -1,6 +1,6 @@
 # top-ten-words-api
 
-## "/" path (POST)
+## localhost:3000 path "/" (POST)
 
 ### Request Body Example (Content-Type: application/json; charset=utf-8"
 ```json
