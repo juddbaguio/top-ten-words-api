@@ -1,1 +1,8 @@
 # top-ten-words-api
+
+### Request Body
+```json
+{
+    "text": "BLABLABLABLABLABLABALBALBALBALBALBALBALBALBABLABLALBALBALBABLABLABLABLABLABALA"
+}
+```
