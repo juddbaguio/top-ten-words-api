@@ -39,12 +39,6 @@ func (c *WordMapContainer) Reset() {
 }
 
 func (c *WordMapContainer) TopTenWords(textInput string) []byte {
-	// m := make(map[string]int)
-	// var wg sync.WaitGroup
-	// wmContainer := WordMapContainer{
-	// 	wg:                wg,
-	// 	WordOccurrenceMap: m,
-	// }
 
 	r := regexp.MustCompile(`[^a-zA-Z\-'’]`)
 
@@ -55,7 +49,7 @@ func (c *WordMapContainer) TopTenWords(textInput string) []byte {
 
 	pushFunc := func(words []string) {
 		for _, word := range words {
-			if word != "" {
+			if len(word) <= 1 {
 				c.PushWordToMap(word)
 			}
 		}
