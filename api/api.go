@@ -61,6 +61,8 @@ func (s *Server) Start() error {
 			server.Close()
 			return fmt.Errorf("could not stop the server gracefully: %v", err.Error())
 		}
+
+		<-ctx.Done()
 	}
 
 	return nil
@@ -76,6 +78,9 @@ func (s *Server) SetupRoutes() {
 	s.mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		defer s.topTenWordsService.Reset()
 		var payload map[string]string
+		// {
+		// 	"text": "sample text"
+		// }
 		err := json.NewDecoder(r.Body).Decode(&payload)
 
 		if err != nil {
